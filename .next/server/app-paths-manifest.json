@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/approval/route": "app/api/approval/route.js",
+  "/api/config/route": "app/api/config/route.js",
+  "/api/send/route": "app/api/send/route.js",
+  "/api/telegram/webhook/route": "app/api/telegram/webhook/route.js",
+  "/contact/[slug]/page": "app/contact/[slug]/page.js",
+  "/contact/route": "app/contact/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/opengraph-image.png/route": "app/opengraph-image.png/route.js",
+  "/route": "app/route.js"
+}

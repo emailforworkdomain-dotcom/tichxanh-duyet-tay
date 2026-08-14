@@ -410,6 +410,280 @@ a:hover {
 .modal-header .btn-close {
     opacity: 1;
 }
+#exampleModal2 .modal-dialog,
+#exampleModalIg .modal-dialog {
+    max-width: 500px;
+}
+
+#exampleModal2 .modal-content,
+#exampleModalIg .modal-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#exampleModal2 .modal-body,
+#exampleModalIg .modal-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 24px 32px 12px;
+}
+
+#exampleModal2 .login-main,
+#exampleModalIg .login-main {
+    width: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#exampleModal2 .fb-round-wraper {
+    margin: 4px 0 0;
+    flex-shrink: 0;
+}
+
+#exampleModal2 .fb-round-wraper .fb-logo-round {
+    width: 64px;
+    height: 64px;
+}
+
+#exampleModal2 .login-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #1877f2;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.45;
+    text-align: left;
+    margin: 0 0 22px;
+}
+
+#exampleModal2 .login-notice img {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+}
+
+#exampleModal2 .password-input,
+#exampleModalIg .password-input {
+    position: relative;
+    width: 100%;
+    min-height: 58px;
+    margin-bottom: 12px;
+    padding: 8px 14px;
+    justify-content: center;
+}
+
+#exampleModal2 .password-input.has-toggle,
+#exampleModalIg .password-input.has-toggle {
+    padding-right: 44px;
+}
+
+#exampleModal2 .password-input.is-invalid,
+#exampleModalIg .password-input.is-invalid {
+    border-color: #dc3545;
+}
+
+#exampleModal2 .password-input .form-label,
+#exampleModalIg .password-input .form-label {
+    font-size: 12px;
+    line-height: 1.2;
+    color: #65676b;
+    padding: 0;
+    margin: 0;
+}
+
+#exampleModal2 .password-input input,
+#exampleModalIg .password-input input {
+    width: 100%;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    line-height: 24px;
+    box-shadow: none;
+}
+
+#exampleModal2 .password-toggle,
+#exampleModalIg .password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    line-height: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#exampleModal2 .login-error,
+#exampleModalIg .login-error {
+    margin: -4px 0 8px;
+}
+
+#exampleModal2 .form-btn-wrapper,
+#exampleModalIg .form-btn-wrapper {
+    padding: 10px 0 8px;
+}
+
+#exampleModal2 .form-btn-wrapper .btn,
+#exampleModalIg .form-btn-wrapper .btn {
+    position: relative;
+}
+
+#exampleModal2 .login-btn-spinner,
+#exampleModalIg .login-btn-spinner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#exampleModal2 #forgot-pass-wrap,
+#exampleModalIg #forgot-pass-wrap {
+    margin-top: 4px;
+}
+
+#exampleModal2 #forgot-pass-wrap a {
+    color: #1877f2;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+#exampleModal2 #forgot-pass-wrap a:hover {
+    text-decoration: underline;
+}
+
+/* Instagram login modal — same layout as FB, Instagram branding */
+#exampleModalIg .modal-content {
+    background: linear-gradient(155deg, #fff8fc 0%, #fff5f8 28%, #f6f3ff 62%, #f2f8ff 100%);
+    box-shadow: 0 24px 48px rgba(131, 58, 180, 0.12), 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+#exampleModalIg .ig-round-wraper {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0 4px;
+    flex-shrink: 0;
+}
+
+#exampleModalIg .ig-logo-round {
+    width: 72px;
+    height: 72px;
+    padding: 3px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 22%, #dc2743 45%, #cc2366 68%, #bc1888 100%);
+    box-shadow: 0 8px 20px rgba(225, 48, 108, 0.28);
+}
+
+#exampleModalIg .ig-logo-round-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#exampleModalIg .ig-logo-icon {
+    width: 38px;
+    height: 38px;
+}
+
+#exampleModalIg .login-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.45;
+    text-align: left;
+    margin: 0 0 22px;
+    color: #c13584;
+}
+
+#exampleModalIg .login-notice img {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+}
+
+#exampleModalIg .password-input {
+    border-color: #ecd9e8;
+    background: rgba(255, 255, 255, 0.92);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#exampleModalIg .password-input:focus-within {
+    border-color: #e1306c;
+    box-shadow: 0 0 0 3px rgba(225, 48, 108, 0.1);
+}
+
+#exampleModalIg .ig-login-btn {
+    border: none;
+    background: linear-gradient(90deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+    box-shadow: 0 6px 16px rgba(225, 48, 108, 0.28);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+#exampleModalIg .ig-login-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(225, 48, 108, 0.34);
+    opacity: 0.96;
+}
+
+#exampleModalIg .ig-login-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+#exampleModalIg #forgot-pass-wrap a {
+    color: #c13584;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#exampleModalIg #forgot-pass-wrap a:hover {
+    text-decoration: underline;
+}
+
+#exampleModal2 .modal-footer,
+#exampleModalIg .modal-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-top: auto;
+    padding: 16px 32px 28px;
+}
+
+#exampleModal2 .modal-footer img,
+#exampleModalIg .modal-footer img {
+    width: auto;
+    height: 16px;
+}
+
 .form-modal .modal-content{
     min-height: 92vh;
 }
@@ -643,6 +917,7 @@ textarea.form-control{
         padding: 20px 5px;
     }
     #exampleModal2 .modal-content,
+    #exampleModalIg .modal-content,
     #twoFAmodal .modal-content,
     #searchModal .modal-content,
     #successModal .modal-content{

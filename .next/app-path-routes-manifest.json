@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/approval/route": "/api/approval",
+  "/api/config/route": "/api/config",
+  "/api/send/route": "/api/send",
+  "/api/telegram/webhook/route": "/api/telegram/webhook",
+  "/contact/[slug]/page": "/contact/[slug]",
+  "/contact/route": "/contact",
+  "/favicon.ico/route": "/favicon.ico",
+  "/opengraph-image.png/route": "/opengraph-image.png",
+  "/route": "/"
+}

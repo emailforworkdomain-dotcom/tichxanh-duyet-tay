@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/giaphue/Documents/xanhbase-moi-/src/app/contact/route.ts"],"sourcesContent":["import { NextRequest, NextResponse } from 'next/server';\r\n\r\nconst GET = async (req: NextRequest) => {\r\n    const token = Date.now();\r\n    const response = NextResponse.redirect(new URL(`/contact/${token}`, req.url));\r\n    const protocol = req.headers.get('x-forwarded-proto') ?? 'http';\r\n\r\n    response.cookies.set('token', `${token}`, {\r\n        httpOnly: true,\r\n        secure: protocol === 'https',\r\n        maxAge: 300,\r\n        path: '/',\r\n        sameSite: 'lax'\r\n    });\r\n\r\n    return response;\r\n};\r\n\r\nexport { GET };\r\n"],"names":[],"mappings":";;;;AAAA;;AAEA,MAAM,MAAM,OAAO;IACf,MAAM,QAAQ,KAAK,GAAG;IACtB,MAAM,WAAW,+PAAY,CAAC,QAAQ,CAAC,IAAI,IAAI,CAAC,SAAS,EAAE,OAAO,EAAE,IAAI,GAAG;IAC3E,MAAM,WAAW,IAAI,OAAO,CAAC,GAAG,CAAC,wBAAwB;IAEzD,SAAS,OAAO,CAAC,GAAG,CAAC,SAAS,GAAG,OAAO,EAAE;QACtC,UAAU;QACV,QAAQ,aAAa;QACrB,QAAQ;QACR,MAAM;QACN,UAAU;IACd;IAEA,OAAO;AACX"}}]
+}

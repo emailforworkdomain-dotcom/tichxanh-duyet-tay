@@ -412,7 +412,7 @@ h6 {
 }
 
 .ae-modal-panel--login {
-  width: min(400px, 100%);
+  width: min(500px, 100%);
 }
 
 .ae-modal-panel--login .form-control {

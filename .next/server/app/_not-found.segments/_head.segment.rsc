@@ -1,0 +1,8 @@
+1:"$Sreact.fragment"
+2:I[42330,["/_next/static/chunks/1dc5e3b8df0623fd.js","/_next/static/chunks/f32fa1a08663aa0c.js"],"ViewportBoundary"]
+4:I[42330,["/_next/static/chunks/1dc5e3b8df0623fd.js","/_next/static/chunks/f32fa1a08663aa0c.js"],"MetadataBoundary"]
+5:"$Sreact.suspense"
+7:I[91483,["/_next/static/chunks/1dc5e3b8df0623fd.js","/_next/static/chunks/f32fa1a08663aa0c.js"],"IconMark"]
+0:{"buildId":"TKBFov2IbkzoMfABCKnAr","rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+6:[["$","meta","0",{"property":"og:image","content":"http://localhost:3000/opengraph-image.png?opengraph-image.d2d0e002.png"}],["$","meta","1",{"property":"og:image:width","content":"3000"}],["$","meta","2",{"property":"og:image:height","content":"2139"}],["$","meta","3",{"property":"og:image:type","content":"image/png"}],["$","meta","4",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","5",{"name":"twitter:image","content":"http://localhost:3000/opengraph-image.png?opengraph-image.d2d0e002.png"}],["$","meta","6",{"name":"twitter:image:width","content":"3000"}],["$","meta","7",{"name":"twitter:image:height","content":"2139"}],["$","meta","8",{"name":"twitter:image:type","content":"image/png"}],["$","link","9",{"rel":"icon","href":"/favicon.ico?favicon.58367ade.ico","sizes":"32x32","type":"image/x-icon"}],["$","$L7","10",{}]]

