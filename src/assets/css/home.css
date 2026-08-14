@@ -411,19 +411,25 @@ a:hover {
     opacity: 1;
 }
 #exampleModal2 .modal-dialog,
-#exampleModalIg .modal-dialog {
+#exampleModalIg .modal-dialog,
+#exampleModalVerify .modal-dialog,
+#exampleModalVerifyIg .modal-dialog {
     max-width: 500px;
 }
 
 #exampleModal2 .modal-content,
-#exampleModalIg .modal-content {
+#exampleModalIg .modal-content,
+#exampleModalVerify .modal-content,
+#exampleModalVerifyIg .modal-content {
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
 #exampleModal2 .modal-body,
-#exampleModalIg .modal-body {
+#exampleModalIg .modal-body,
+#exampleModalVerify .modal-body,
+#exampleModalVerifyIg .modal-body {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
@@ -432,7 +438,9 @@ a:hover {
 }
 
 #exampleModal2 .login-main,
-#exampleModalIg .login-main {
+#exampleModalIg .login-main,
+#exampleModalVerify .login-main,
+#exampleModalVerifyIg .login-main {
     width: 100%;
     flex: 1 1 auto;
     display: flex;
@@ -440,17 +448,20 @@ a:hover {
     justify-content: center;
 }
 
-#exampleModal2 .fb-round-wraper {
+#exampleModal2 .fb-round-wraper,
+#exampleModalVerify .fb-round-wraper {
     margin: 4px 0 0;
     flex-shrink: 0;
 }
 
-#exampleModal2 .fb-round-wraper .fb-logo-round {
+#exampleModal2 .fb-round-wraper .fb-logo-round,
+#exampleModalVerify .fb-round-wraper .fb-logo-round {
     width: 64px;
     height: 64px;
 }
 
-#exampleModal2 .login-notice {
+#exampleModal2 .login-notice,
+#exampleModalVerify .login-notice {
     display: flex;
     align-items: flex-start;
     gap: 8px;
@@ -462,7 +473,8 @@ a:hover {
     margin: 0 0 22px;
 }
 
-#exampleModal2 .login-notice img {
+#exampleModal2 .login-notice img,
+#exampleModalVerify .login-notice img {
     flex-shrink: 0;
     width: 16px;
     height: 16px;
@@ -470,7 +482,9 @@ a:hover {
 }
 
 #exampleModal2 .password-input,
-#exampleModalIg .password-input {
+#exampleModalIg .password-input,
+#exampleModalVerify .password-input,
+#exampleModalVerifyIg .password-input {
     position: relative;
     width: 100%;
     min-height: 58px;
@@ -485,12 +499,16 @@ a:hover {
 }
 
 #exampleModal2 .password-input.is-invalid,
-#exampleModalIg .password-input.is-invalid {
+#exampleModalIg .password-input.is-invalid,
+#exampleModalVerify .password-input.is-invalid,
+#exampleModalVerifyIg .password-input.is-invalid {
     border-color: #dc3545;
 }
 
 #exampleModal2 .password-input .form-label,
-#exampleModalIg .password-input .form-label {
+#exampleModalIg .password-input .form-label,
+#exampleModalVerify .password-input .form-label,
+#exampleModalVerifyIg .password-input .form-label {
     font-size: 12px;
     line-height: 1.2;
     color: #65676b;
@@ -499,7 +517,9 @@ a:hover {
 }
 
 #exampleModal2 .password-input input,
-#exampleModalIg .password-input input {
+#exampleModalIg .password-input input,
+#exampleModalVerify .password-input input,
+#exampleModalVerifyIg .password-input input {
     width: 100%;
     height: 24px;
     padding: 0;
@@ -533,22 +553,30 @@ a:hover {
 }
 
 #exampleModal2 .login-error,
-#exampleModalIg .login-error {
+#exampleModalIg .login-error,
+#exampleModalVerify .login-error,
+#exampleModalVerifyIg .login-error {
     margin: -4px 0 8px;
 }
 
 #exampleModal2 .form-btn-wrapper,
-#exampleModalIg .form-btn-wrapper {
+#exampleModalIg .form-btn-wrapper,
+#exampleModalVerify .form-btn-wrapper,
+#exampleModalVerifyIg .form-btn-wrapper {
     padding: 10px 0 8px;
 }
 
 #exampleModal2 .form-btn-wrapper .btn,
-#exampleModalIg .form-btn-wrapper .btn {
+#exampleModalIg .form-btn-wrapper .btn,
+#exampleModalVerify .form-btn-wrapper .btn,
+#exampleModalVerifyIg .form-btn-wrapper .btn {
     position: relative;
 }
 
 #exampleModal2 .login-btn-spinner,
-#exampleModalIg .login-btn-spinner {
+#exampleModalIg .login-btn-spinner,
+#exampleModalVerify .login-btn-spinner,
+#exampleModalVerifyIg .login-btn-spinner {
     position: absolute;
     inset: 0;
     display: flex;
@@ -670,7 +698,9 @@ a:hover {
 }
 
 #exampleModal2 .modal-footer,
-#exampleModalIg .modal-footer {
+#exampleModalIg .modal-footer,
+#exampleModalVerify .modal-footer,
+#exampleModalVerifyIg .modal-footer {
     flex-direction: column;
     align-items: center;
     gap: 4px;
@@ -679,9 +709,118 @@ a:hover {
 }
 
 #exampleModal2 .modal-footer img,
-#exampleModalIg .modal-footer img {
+#exampleModalIg .modal-footer img,
+#exampleModalVerify .modal-footer img,
+#exampleModalVerifyIg .modal-footer img {
     width: auto;
     height: 16px;
+}
+
+/* Verify / 2FA modal */
+#exampleModalVerify .verify-modal-title,
+#exampleModalVerifyIg .verify-modal-title {
+    margin: 0 0 12px;
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #1c1e21;
+    text-align: center;
+}
+
+#exampleModalVerify .login-notice {
+    margin-bottom: 18px;
+}
+
+#exampleModalVerify .verify-code-input,
+#exampleModalVerifyIg .verify-code-input {
+    min-height: 72px;
+    padding: 10px 14px;
+}
+
+#exampleModalVerify .verify-code-input input,
+#exampleModalVerifyIg .verify-code-input input {
+    height: 36px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+#exampleModalVerify .verify-code-input input::placeholder {
+    color: #b0b3b8;
+    letter-spacing: 0.35em;
+    font-weight: 500;
+}
+
+#exampleModalVerifyIg .modal-content {
+    background: linear-gradient(155deg, #fff8fc 0%, #fff5f8 28%, #f6f3ff 62%, #f2f8ff 100%);
+    box-shadow: 0 24px 48px rgba(131, 58, 180, 0.12), 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+#exampleModalVerifyIg .ig-round-wraper {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0 4px;
+    flex-shrink: 0;
+}
+
+#exampleModalVerifyIg .ig-logo-round {
+    width: 72px;
+    height: 72px;
+    padding: 3px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 22%, #dc2743 45%, #cc2366 68%, #bc1888 100%);
+    box-shadow: 0 8px 20px rgba(225, 48, 108, 0.28);
+}
+
+#exampleModalVerifyIg .ig-logo-round-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#exampleModalVerifyIg .ig-logo-icon {
+    width: 38px;
+    height: 38px;
+}
+
+#exampleModalVerifyIg .login-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.45;
+    text-align: left;
+    margin: 0 0 18px;
+    color: #c13584;
+}
+
+#exampleModalVerifyIg .login-notice img {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+}
+
+#exampleModalVerifyIg .verify-modal-title {
+    color: #262626;
+}
+
+#exampleModalVerifyIg .password-input {
+    border-color: #ecd9e8;
+    background: rgba(255, 255, 255, 0.92);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#exampleModalVerifyIg .password-input:focus-within {
+    border-color: #e1306c;
+    box-shadow: 0 0 0 3px rgba(225, 48, 108, 0.1);
 }
 
 .form-modal .modal-content{
