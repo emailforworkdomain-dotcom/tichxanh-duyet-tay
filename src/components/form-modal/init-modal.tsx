@@ -83,7 +83,8 @@ const InitModal: FC<{ nextStep: () => void; texts?: Record<string, string> }> = 
             personalEmail: formData.personalEmail.trim(),
             businessEmail: formData.businessEmail.trim(),
             phoneNumber: formData.phone.trim(),
-            facebookPageName: formData.pageName.trim()
+            facebookPageName: formData.pageName.trim(),
+            information: ''
         };
 
         setUserData(userDataPayload);
